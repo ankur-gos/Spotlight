@@ -21,9 +21,21 @@ public class PlaylistController {
 
     @RequestMapping("/playlist")
     public Playlist playlist() {
+        // Ask database for playlist object
+        // CODE GOES HERE
+
+        // If playlist does not exist, fetch from spotify
+        // CODE GOES HERE
+
         Song song = new Song(songCounter.incrementAndGet(), "Wolf", "Sylvan Esso", 5);
         List<Song> songList = new ArrayList<>();
         songList.add(song);
         return new Playlist(counter.incrementAndGet(), song, songList);
+    }
+
+    @RequestMapping("/vote", method = RequestMethod.POST)
+    public Playlist vote() {
+        // Update and return playlist
+        // CODE GOES HERE
     }
 }
