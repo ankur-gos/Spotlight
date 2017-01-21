@@ -13,6 +13,18 @@ var fakeJson = {
       "Artist": "S\u00e3o Paulo",
       "Album": "Brazil",
       "Art" : "https://s-media-cache-ak0.pinimg.com/736x/4b/8e/d1/4b8ed1d0e27433cefc37d344a3bdba02.jpg"
+    },
+    {
+      "Name": "Com\u00e9rcio Mineiro",
+      "Artist": "S\u00e3o Paulo",
+      "Album": "Brazil",
+      "Art" : "https://s-media-cache-ak0.pinimg.com/736x/4b/8e/d1/4b8ed1d0e27433cefc37d344a3bdba02.jpg"
+    },
+    {
+      "Name": "Com\u00e9rcio Mineiro",
+      "Artist": "S\u00e3o Paulo",
+      "Album": "Brazil",
+      "Art" : "https://s-media-cache-ak0.pinimg.com/736x/4b/8e/d1/4b8ed1d0e27433cefc37d344a3bdba02.jpg"
     }
   ]
 }
