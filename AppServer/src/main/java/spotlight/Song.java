@@ -4,11 +4,13 @@ for spotlight project
 ucsc hackathon
 */
 public class Song {
+	//fields
 	int id;
 	String name;
 	String artist;
 	int voteCount;
 	
+	//set
 	Song(int id, String name, String artist, int voteCount)
 	{
 		this.id = id;
@@ -17,6 +19,7 @@ public class Song {
 		this.voteCount = voteCount;
 		
 	}
+	//getters
 	 public int getId()
 	 {
 		 return id;
