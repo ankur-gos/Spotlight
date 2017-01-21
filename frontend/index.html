@@ -6,15 +6,15 @@
 		<link rel ="stylesheet" href ="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 		<script src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.11.3.min.js"></script>
 		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-		<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">		
-		<script src="script.js"></script>
-		<link rel = "stylesheet" href = "main.css" >
-	</head>
+		<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
 
+		
+		<script src="script.js"></script>
+	</head>
 	<body ng-app = "mainApp">
 		<div ng-controller = "appController">
 			<div class = "container">
-				<div class="row currentSong">					
+				<div class="row">					
 					<img class="col-sm-2" ng-src = "{{curSong.Art}}" />
 					<div class = "col-sm-4">
 						<span>{{curSong.Name}}</span>
@@ -22,22 +22,22 @@
 						<span>{{curSong.Album}}</span>
 					</div> 
 					<div class = "col-sm-6">
-						<p>Player time</p>
+						<p>This takes 6</p>
 					</div>
 				</div>
-
-				<div class="songList">
+				<div class="row">
 					<ul class = "list-group">
 						<li class="list-group-item" ng-repeat = "item in list1">
-							<div class="row">								
-								<img class = " col-sm-2 listImage" ng-src="{{item.Art}}"/>								
+							<div>
+								<img class = "col-sm-2 "ng-src="{{item.Art}}"/>	
 								<div class = "col-sm-10">
 									{{item.Name}}
 									{{item.Artist}}
 									{{item.Album}}
 									<i class="fa fa-plus-circle"> </i>
-								</div>
-							</div>																							
+								</div>								
+								
+							</div>					
 						</li>
 					</ul>
 				</div>
