@@ -1,3 +1,4 @@
 PageServer/env
 *.pyc
 AppServer/.gradle
+*.class
