@@ -3,6 +3,13 @@ for spotlight project
 1/21/17
 ucsc hackathon
 */
+
+package spotlight;
+
+import java.io.Serializable;
+import javax.persistence.*;
+
+@Entity
 public class Song {
 	//fields
 	@Id
