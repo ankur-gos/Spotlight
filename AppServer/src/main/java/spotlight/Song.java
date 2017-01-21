@@ -3,6 +3,7 @@ for spotlight project
 1/21/17
 ucsc hackathon
 */
+
 public class Song {
 	//fields
 	private long id;
