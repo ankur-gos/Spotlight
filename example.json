@@ -1,0 +1,21 @@
+{
+    "_comment": "Playlist object",
+    "currentSong": {
+        "name": "Wolf",
+        "artist": "Sylvan Esso"
+    },
+    "playlist": [
+        {
+            "id": 1,
+            "name": "All Alone",
+            "artist": "Gorillaz",
+            "votes": 0
+        },
+        {
+            "id": 2,
+            "name": "Life Itself",
+            "artist": "Glass Animals",
+            "votes": 1
+        }
+    ]
+}
