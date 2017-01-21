@@ -8,7 +8,7 @@ package spotlight;
 
 import java.io.Serializable;
 import javax.persistence.*;
-import java.util.List;
+import java.util.ArrayList;
 
 @Entity
 public class Playlist implements Serializable{
@@ -22,9 +22,9 @@ public class Playlist implements Serializable{
 
     @OneToMany(orphanRemoval = true, cascade = {CascadeType.ALL}, fetch = FetchType.LAZY)
     @JoinColumn(nullable = false)
-    private List<Song> playlist;
+    private List<Song> playlist = new ArrayList<>();
     
-    public Playlist(long id, Song currentSong, Song[] playlist){
+    public Playlist(long id, Song currentSong, List<Song> playlist){
         this.id = id;
         this.currentSong = currentSong;
         this.playlist = playlist;
