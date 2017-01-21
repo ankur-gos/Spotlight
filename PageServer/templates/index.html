@@ -16,9 +16,7 @@
 		<div ng-controller = "appController">
 			<div class = "container">
 				<div class="row currentSong">					
-					<!--
-					<img class="col-sm-2 col-xs-8 col-xs-offset-2 col-sm-offset-0" ng-src = "{{curSong.Art}}" />
-					-->
+					
 					<div class = "col-sm-4 col-xs-12">
 						<span ng-bind = "curSong.Name"></span>
 						<span ng-bind = "curSong.Artist"></span>
@@ -29,32 +27,7 @@
 					</div>
 				</div>
 
-				<!--
-
-				<div class="songList">
-					<ul class = "list-group">
-						<li class="list-group-item" ng-repeat = "item in list1 | orderBy:'-Vote'">
-							<div class="row">								
-								<img class = " col-sm-1 col- listImage" ng-src="{{item.Art}}"/>								
-								<div class = "col-sm-10 col-xs-10">
-									{{item.Name}}
-									{{item.Artist}}
-									{{item.Album}}
-									{{item.Vote}}
-								</div>
-								<div class = "col-sm-1">
-									<button ng-click= "item.Vote = item.Vote + 1" type="button" class="btn btn-default" aria-label="Right Align">
-  										<span class="glyphicon glyphicon-triangle-top" aria-hidden="true"></span>
-									</button>
-									<button ng-click= "item.Vote = item.Vote - 1" type="button" class="btn btn-default" aria-label="Right Align">
-  										<span class="glyphicon glyphicon-triangle-bottom" aria-hidden="true"></span>
-									</button>
-								</div>
-							</div>																						
-						</li>
-					</ul>
-				</div>
-				-->
+				
 			</div>
 		</div>		
 	</body>
