@@ -5,12 +5,12 @@ public class Song {
 	String artist;
 	int voteCount;
 	
-	Song(int id1, String name1, String artist1, int voteCount1)
+	Song(int id, String name, String artist, int voteCount)
 	{
-		id = id1;
-		name = name1;
-		artist = artist1;
-		voteCount = voteCount1;
+		this.id = id;
+		this.name = name;
+		this.artist = artist;
+		this.voteCount = voteCount;
 		
 	}
 	 public int getId()
