@@ -16,11 +16,11 @@
 		<div ng-controller = "appController">
 			<div class = "container">
 				<div class="row currentSong">					
-					<img class="col-sm-2 col-xs-8 col-xs-offset-2" ng-src = "{{curSong.Art}}" />
+					<img class="col-sm-2 col-xs-8 col-xs-offset-2 col-sm-offset-0" ng-src = "{{curSong.Art}}" />
 					<div class = "col-sm-4 col-xs-12">
-						<span>{{curSong.Name}}</span>
-						<span>{{curSong.Artist}}</span>
-						<span>{{curSong.Album}}</span>
+						<span ng-bind = "curSong.Name"></span>
+						<span ng-bind = "curSong.Artist"></span>
+						<span ng-bind = "curSong.Album"></span>
 					</div> 
 					<div class = "col-sm-6 col-xs-6">
 						<p>Player time</p>
