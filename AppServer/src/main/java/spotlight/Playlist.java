@@ -38,7 +38,7 @@ public class Playlist implements Serializable{
         return currentSong;
     }
 
-    public Song[] getPlaylist{
+    public List<Song> getPlaylist{
         return playlist;
     }
 }
