@@ -22,23 +22,23 @@ public class Playlist implements Serializable{
 
     @OneToMany(orphanRemoval = true, cascade = {CascadeType.ALL}, fetch = FetchType.LAZY)
     @JoinColumn(nullable = false)
-    private List<Song> playlist = new ArrayList<>();
+    private ArrayList<Song> playlist = new ArrayList<>();
     
-    public Playlist(long id, Song currentSong, List<Song> playlist){
+    public Playlist(long id, Song currentSong, ArrayList<Song> playlist){
         this.id = id;
         this.currentSong = currentSong;
         this.playlist = playlist;
     }
 
-    public long getId{
+    public long getId(){
         return id;
     }
 
-    public Song getCurrentSong{
+    public Song getCurrentSong(){
         return currentSong;
     }
 
-    public List<Song> getPlaylist{
+    public ArrayList<Song> getPlaylist(){
         return playlist;
     }
 }

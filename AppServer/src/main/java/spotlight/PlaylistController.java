@@ -14,14 +14,14 @@ import java.util.ArrayList;
 
 @RestController
 public class PlaylistController {
-    
+
     private final AtomicLong counter = new AtomicLong();
     private final AtomicLong songCounter = new AtomicLong();
 
     @RequestMapping("/playlist")
     public Playlist playlist() {
         Song song = new Song(songCounter.incrementAndGet(), "Wolf", "Sylvan Esso", 5);
-        List<Song> songList = new ArrayList<>();
+        ArrayList<Song> songList = new ArrayList<>();
         songList.add(song);
         return new Playlist(counter.incrementAndGet(), song, songList);
     }

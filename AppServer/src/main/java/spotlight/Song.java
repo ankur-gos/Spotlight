@@ -23,14 +23,14 @@ public class Song {
 	private String artist;
 
 	@Column(nullable = false)
-	private int voteCount;
+	private Integer voteCount;
 
 	@ManyToOne
 	@JoinColumn(referencedColumnName="id")
 	private Playlist playlist;
 	
 	//set
-	Song(int id, String name, String artist, int voteCount)
+	Song(Long id, String name, String artist, Integer voteCount)
 	{
 		this.id = id;
 		this.name = name;
@@ -39,7 +39,7 @@ public class Song {
 		
 	}
 	//getters
-	 public int getId()
+	 public Long getId()
 	 {
 		 return id;
 	 }
@@ -51,7 +51,7 @@ public class Song {
 	 {
 		 return artist;
 	 }
-	 public int getVoteCnt()
+	 public Integer getVoteCnt()
 	 {
 		 return voteCount;
 	 }
