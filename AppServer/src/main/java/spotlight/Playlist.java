@@ -1,3 +1,9 @@
+/*
+ * Playlist.java
+ * Ankur Goswami, agoswam3@ucsc.edu
+ * Playlist object
+ */
+
 package spotlight;
 
 public class Playlist{
