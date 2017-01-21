@@ -5,10 +5,22 @@ ucsc hackathon
 */
 public class Song {
 	//fields
-	int id;
-	String name;
-	String artist;
-	int voteCount;
+	@Id
+	@GeneratedValue
+	private Long id;
+
+	@Column(nullable = false)
+	private String name;
+	
+	@Column(nullable = false)
+	private String artist;
+
+	@Column(nullable = false)
+	private int voteCount;
+
+	@ManyToOne
+	@JoinColumn(referencedColumnName="id")
+	private Playlist playlist;
 	
 	//set
 	Song(int id, String name, String artist, int voteCount)
