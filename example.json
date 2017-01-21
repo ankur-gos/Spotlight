@@ -1,8 +1,9 @@
 {
     "_comment": "Playlist object",
     "id": 0,
+    "name": "My awesome playlist",
     "currentSong": {
-        "id": 2,
+        "id": 0,
         "name": "Wolf",
         "artist": "Sylvan Esso",
         "votes": 5

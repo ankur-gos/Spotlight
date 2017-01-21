@@ -1,9 +1,28 @@
+/*
+ * Playlist.java
+ * Ankur Goswami, agoswam3@ucsc.edu
+ * Playlist object
+ */
+
 package spotlight;
 
-public class Playlist{
-    private final long id;
-    private final Song currentSong;
-    private final Song[] playlist;
+import java.io.Serializable;
+import javax.persistence.*;
+import java.util.List;
+
+@Entity
+public class Playlist implements Serializable{
+
+    @Id
+    @GeneratedValue
+    private Long id;
+
+    @JoinColumn(nullable = false)
+    private Song currentSong;
+
+    @OneToMany(orphanRemoval = true, cascade = {CascadeType.ALL}, fetch = FetchType.LAZY)
+    @JoinColumn(nullable = false)
+    private List<Song> playlist;
     
     public Playlist(long id, Song currentSong, Song[] playlist){
         this.id = id;
