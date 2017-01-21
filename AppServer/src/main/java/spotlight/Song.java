@@ -10,7 +10,7 @@ import java.io.Serializable;
 import javax.persistence.*;
 
 @Entity
-public class Song {
+public class Song implements Serializable{
 	//fields
 	@Id
 	@GeneratedValue
@@ -26,7 +26,7 @@ public class Song {
 	private Integer voteCount;
 
 	@ManyToOne
-	@JoinColumn(referencedColumnName="id")
+	@JoinColumn(name = "playlist", referencedColumnName="id")
 	private Playlist playlist;
 	
 	//set
