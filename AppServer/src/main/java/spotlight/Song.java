@@ -4,15 +4,33 @@ for spotlight project
 ucsc hackathon
 */
 
-public class Song {
+package spotlight;
+
+import java.io.Serializable;
+import javax.persistence.*;
+
+@Entity
+public class Song implements Serializable{
 	//fields
-	private long id;
+	@Id
+	@GeneratedValue
+	private Long id;
+
+	@Column(nullable = false)
 	private String name;
+	
+	@Column(nullable = false)
 	private String artist;
-	private int voteCount;
+
+	@Column(nullable = false)
+	private Integer voteCount;
+
+	@ManyToOne
+	@JoinColumn(name = "playlist", referencedColumnName="id")
+	private Playlist playlist;
 	
 	//set
-	Song(int id, String name, String artist, int voteCount)
+	Song(Long id, String name, String artist, Integer voteCount)
 	{
 		this.id = id;
 		this.name = name;
@@ -21,7 +39,7 @@ public class Song {
 		
 	}
 	//getters
-	 public int getId()
+	 public Long getId()
 	 {
 		 return id;
 	 }
@@ -33,7 +51,7 @@ public class Song {
 	 {
 		 return artist;
 	 }
-	 public int getVoteCnt()
+	 public Integer getVoteCnt()
 	 {
 		 return voteCount;
 	 }
