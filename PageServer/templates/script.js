@@ -6,25 +6,36 @@ var fakeJson = {
       "Name": "Alfreds Futterkiste",
       "Artist": "Berlin",
       "Album": "Germany",
-      "Art": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/bb/First_abstract_watercolor_kandinsky_1910.jpg/300px-First_abstract_watercolor_kandinsky_1910.jpg"
+      "Art": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/bb/First_abstract_watercolor_kandinsky_1910.jpg/300px-First_abstract_watercolor_kandinsky_1910.jpg",
+      "Vote": 5,
     },
     {
       "Name": "Com\u00e9rcio Mineiro",
       "Artist": "S\u00e3o Paulo",
       "Album": "Brazil",
-      "Art" : "https://s-media-cache-ak0.pinimg.com/736x/4b/8e/d1/4b8ed1d0e27433cefc37d344a3bdba02.jpg"
+      "Art" : "https://s-media-cache-ak0.pinimg.com/736x/4b/8e/d1/4b8ed1d0e27433cefc37d344a3bdba02.jpg",
+      "Vote": 3,
     },
     {
       "Name": "Com\u00e9rcio Mineiro",
       "Artist": "S\u00e3o Paulo",
       "Album": "Brazil",
-      "Art" : "https://s-media-cache-ak0.pinimg.com/736x/4b/8e/d1/4b8ed1d0e27433cefc37d344a3bdba02.jpg"
+      "Art" : "https://s-media-cache-ak0.pinimg.com/736x/4b/8e/d1/4b8ed1d0e27433cefc37d344a3bdba02.jpg",
+      "Vote": 25,
     },
     {
       "Name": "Com\u00e9rcio Mineiro",
       "Artist": "S\u00e3o Paulo",
       "Album": "Brazil",
-      "Art" : "https://s-media-cache-ak0.pinimg.com/736x/4b/8e/d1/4b8ed1d0e27433cefc37d344a3bdba02.jpg"
+      "Art" : "https://s-media-cache-ak0.pinimg.com/736x/4b/8e/d1/4b8ed1d0e27433cefc37d344a3bdba02.jpg",
+      "Vote": 123,
+    },
+    {
+      "Name": "Com\u00e9rcio Mineiro",
+      "Artist": "S\u00e3o Paulo",
+      "Album": "Brazil",
+      "Art" : "https://s-media-cache-ak0.pinimg.com/736x/4b/8e/d1/4b8ed1d0e27433cefc37d344a3bdba02.jpg",
+      "Vote": 40,
     }
   ]
 }
@@ -41,6 +52,5 @@ $scope.curSong = {
 	// 	$scope.networkList = response.data.records;
 	// });
 
-	$scope.list1 = [10, 2, 3, 5];
 	$scope.list1 = fakeJson.songs;
 }]);
