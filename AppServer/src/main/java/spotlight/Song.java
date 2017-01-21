@@ -5,10 +5,10 @@ ucsc hackathon
 */
 public class Song {
 	//fields
-	int id;
-	String name;
-	String artist;
-	int voteCount;
+	private long id;
+	private String name;
+	private String artist;
+	private int voteCount;
 	
 	//set
 	Song(int id, String name, String artist, int voteCount)
