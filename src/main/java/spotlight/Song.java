@@ -49,6 +49,9 @@ public class Song implements Serializable{
 	//getters
 	 public Long getId()
 	 {
+		 if(id == null){
+			 id = 20;
+		 }
 		 return id;
 	 }
 	 public String getURI(){
