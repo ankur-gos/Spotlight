@@ -16,19 +16,17 @@ public class Song implements Serializable{
 	@GeneratedValue
 	private Long id;
 
-	@Column(nullable = false)
 	private String name;
 	
-	@Column(nullable = false)
 	private String artist;
 
-	@Column(nullable = false)
 	private Integer voteCount;
 
 	@ManyToOne
-	@JoinColumn(name = "playlist", referencedColumnName="id")
 	private Playlist playlist;
 	
+	Song(){}
+
 	//set
 	Song(Long id, String name, String artist, Integer voteCount)
 	{
@@ -54,6 +52,10 @@ public class Song implements Serializable{
 	 public Integer getVoteCnt()
 	 {
 		 return voteCount;
+	 }
+
+	 public void iterateVote(){
+		 this.voteCount = this.voteCount + 1;
 	 }
 
 }
