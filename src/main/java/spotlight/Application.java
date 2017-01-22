@@ -22,7 +22,7 @@ public class Application {
 				"myplaylist")
 				.forEach(
 						a -> {
-                            Song song = songRepository.save(new Song(new Long(1), "Wolf", "Sylvan Esso", 5, "spotify:track:4j4OfqOvPCnOoePywhtrc6"));
+                            Song song = songRepository.save(new Song(new Long(3), "Wolf", "Sylvan Esso", 1, "spotify:track:4j4OfqOvPCnOoePywhtrc6"));
                             List<Song> songList = new ArrayList<>();
                             songList.add(song);
                             playlistRepository.save(new Playlist(new Long(1), song, songList));

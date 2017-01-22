@@ -1,8 +1,8 @@
 //pseudo code
 //propsl
-package spotlight;
+// package spotlight;
 
-class SpotifyManager implements Serializable{
+// class SpotifyManager implements Serializable{
    
     // @GET users/{user_id}/playlists/{playlist_id}
     // public Playlist getPlaylist(){
@@ -28,4 +28,4 @@ class SpotifyManager implements Serializable{
     //           e.printStackTrace();
     //        }      
     // }
-}
+// }
