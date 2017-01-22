@@ -14,6 +14,7 @@ import java.util.List;
 import java.util.ListIterator;
 
 @RestController
+@CrossOrigin()
 @RequestMapping("/nextSong")
 public class NextSongController {
 

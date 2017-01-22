@@ -1,31 +1,38 @@
-//pseudo code
-//propsl
-// package spotlight;
+// /*
+//  * SpotifyManager.java
+//  * Ankur Goswami, agoswam3@ucsc.edu
+//  * Spotify Manager
+//  */
 
-// class SpotifyManager implements Serializable{
-   
-    // @GET users/{user_id}/playlists/{playlist_id}
-    // public Playlist getPlaylist(){
-    //     // STUB
-    //    ArrayList<Playlist> find = new ArrayList<Playlist>;
-    //    //no curr user
-    //    if(user == NULL)
-    //    {
-    //       return null;
-    //    }
-    //    try{
-    //       for(Playlist playlist : )
-    //       {
-    //         Long id = playlist.getId();
-    //         Song currSong =  playlist.getCurrentSong();
-    //         List<Song>playlistt = playlist.getPlaylist();
-    //         find.searh(new Playlist(id, currSong, playlistt);
-             
-    //       }
-    //                    }
-    //        catch(Exception e){
-    //           System.err.println("Cannot load user specified playlist");
-    //           e.printStackTrace();
-    //        }      
-    // }
+// import java.net.*;
+// import java.io.*;
+
+// class SpotifyManager {
+
+//     public JSONObject getJsonFromURL(String url){
+//         URL spotify = new URL(url);
+//         URLConnection sc = spotify.openConnection();
+//         BufferedReader in = new BufferedReader(
+//                                 new InputStreamReader(
+//                                 sc.getInputStream()));
+//         StringBuilder sb = new StringBuilder();
+//         String inputLine;
+
+//         while ((inputLine = in.readLine()) != null) 
+//             sb.append(inputLine);
+
+//         in.close();
+//         return new JSONObject(sb.toString());
+//    }
+//    public void getData(String playlist){
+//         JSONObject playlistObj = getJsonFromURL("https://api.spotify.com/v1/me/playlists");
+//         JSONArray playlists = playlistObj.getJSONArray("items");
+//         for(int i = 0; i < playlists.length(); i++){
+//             JSONObject playlist = playlists.getJSONObject(i);
+//             String name = playlist.getString("name");
+//             if (name.equals(playlist)){
+
+//             }
+//         }
+//    }
 // }
