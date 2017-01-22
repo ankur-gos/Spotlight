@@ -17,8 +17,10 @@ class SpotifyManager {
     public String getAuthHeader(String token){
         try{
         String charset = "UTF-8";
-        String query = String.format("grant_type=authorization_code&code=%s&redirect_ui=https%3A%2F%2Fspotlightweb.herokuapp.com%2Fauth&client_id=f4013c48969645179f4f32a94e4b69ae&client_secret=a7df0e5c4692491b94148a15bf324f96", 
-            URLEncoder.encode(token, charset));
+        String url = "https://spotlightweb.herokuapp.com/auth";
+        String query = String.format("grant_type=authorization_code&code=%s&redirect_ui=%s&client_id=f4013c48969645179f4f32a94e4b69ae&client_secret=a7df0e5c4692491b94148a15bf324f96", 
+            URLEncoder.encode(token, charset),
+            URLEncoder.encode(url, charset));
         URLConnection connection = new URL("https://accounts.spotify.com/api/token").openConnection();
         connection.setDoOutput(true);
         connection.setRequestProperty("Accept-Charset", charset);
