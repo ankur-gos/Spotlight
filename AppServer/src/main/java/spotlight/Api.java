@@ -7,7 +7,7 @@ import com.wrapper.spotify.methods.authentication.ClientCredentialsGrantRequest;
 import com.wrapper.spotify.methods.authentication.RefreshAccessTokenRequest;
 public class Api {
 	public static final String HOST_= "api.spotify.com";
+	public static final Integer PORT_ = 443;
 	
 
 }
-
