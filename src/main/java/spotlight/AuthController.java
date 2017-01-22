@@ -12,6 +12,7 @@ import org.springframework.beans.factory.annotation.*;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.ListIterator;
+import org.json.*;
 
  @RestController
  @CrossOrigin()
@@ -19,25 +20,33 @@ import java.util.ListIterator;
  class AuthController{
 
      private final PlaylistRepository playlistRepository;
+     private final SongRepository songRepository;
 
      @Autowired
-     AuthController(PlaylistRepository playlistRepository){
+     AuthController(PlaylistRepository playlistRepository, SongRepository songRepository){
          this.playlistRepository = playlistRepository;
+         this.songRepository = songRepository;
      }
 
      @RequestMapping(method = RequestMethod.GET)
      public Playlist auth(@RequestParam("code") String code){
-         Playlist playlist = this.playlistRepository.findOne(new Long(1));
-         List<Song> songList = playlist.getPlaylist();
-         for (ListIterator<Song> iter = songList.listIterator(); iter.hasNext(); ) {
-             Song nextSong = iter.next();
-             if(nextSong.getId() == Long.parseLong(songId)){
-                 nextSong.iterateVote();
-                 iter.set(nextSong);
-                 break;
-             }
+         SpotifyManager smanager = new SpotifyManager();
+         JSONArray tracks = smanager.getData("Life is good", code);
+         Playlist playlist = new Playlist();
+         List<Song> songs = new ArrayList<>();
+         for(int i = 0; i < tracks.length(); i++){
+             JSONObject track = tracks.getJSONObject(i);
+             String name = track.getString("name");
+             JSONArray artists = track.getJSONArray("artists");
+             JSONObject artistObj = artists.getJSONObject(0);
+             String artist = artistObj.getString("name");
+             String uri = track.getString("uri");
+             Song addSong = songRepository.save(new Song(name, artist, 0, uri));
+             songs.add(addSong);
          }
-         playlist.setPlaylist(songList);
-         return playlistRepository.save(playlist);
+         playlist.setPlaylist(songs);
+         playlist.setCurrentSong(songs.get(0));
+         playlistRepository.save(playlist);
+         return playlist;
      }
  }

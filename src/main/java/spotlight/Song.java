@@ -38,6 +38,13 @@ public class Song implements Serializable{
 		this.voteCount = voteCount;
 		this.uri = uri;
 	}
+
+	Song(String name, String artist, Integer voteCound, String uri){
+		this.name = name;
+		this.artist = artist;
+		this.voteCount = voteCount;
+		this.uri = uri;
+	}
 	//getters
 	 public Long getId()
 	 {

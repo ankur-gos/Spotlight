@@ -4,12 +4,18 @@
  * Spotify Manager
  */
 
+package spotlight;
+
 import java.net.*;
 import java.io.*;
+import org.json.*;
 
 class SpotifyManager {
 
+    SpotifyManager(){}
+
     public String getAuthHeader(String token){
+        try{
         String charset = "UTF-8";
         String query = String.format("grant_type=authorization_code&code=%s&redirect_ui=https%3A%2F%2Fspotlightweb.herokuapp.com%2Fauth&client_id=f4013c48969645179f4f32a94e4b69ae&client_secret=a7df0e5c4692491b94148a15bf324f96", 
             URLEncoder.encode(token, charset));
@@ -23,14 +29,18 @@ class SpotifyManager {
         }
         BufferedReader in = new BufferedReader(new InputStreamReader(
                                                connection.getInputStream()));
+        String inputLine;
+        StringBuilder sb = new StringBuilder();
         while ((inputLine = in.readLine()) != null)
             sb.append(inputLine);
         in.close();
         JSONObject authObj = new JSONObject(sb.toString());
-        return "Bearer " + authObj.getString("access_token");
+        return "Bearer " + authObj.getString("access_token");}catch(Exception e){System.out.println(e);}
+        return "";
     }
 
     public JSONObject getJsonFromURL(String url, String authHeader){
+        try{
         URL spotify = new URL(url);
         URLConnection sc = spotify.openConnection();
         sc.setRequestProperty("Authorization", authHeader);
@@ -44,18 +54,22 @@ class SpotifyManager {
             sb.append(inputLine);
 
         in.close();
-        return new JSONObject(sb.toString());
+        return new JSONObject(sb.toString());}catch(Exception e){}
+        return null;
    }
-    public void getData(String playlist, String token){
+    public JSONArray getData(String playlist, String token){
         String authHeader = getAuthHeader(token);
         JSONObject playlistObj = getJsonFromURL("https://api.spotify.com/v1/me/playlists", authHeader);
         JSONArray playlists = playlistObj.getJSONArray("items");
         for(int i = 0; i < playlists.length(); i++){
-            JSONObject playlist = playlists.getJSONObject(i);
-            String name = playlist.getString("name");
+            JSONObject list = playlists.getJSONObject(i);
+            String name = list.getString("name");
             if (name.equals(playlist)){
-
+                JSONObject tracksObj = new JSONObject(list.getString("tracks"));
+                JSONObject tracks = getJsonFromURL(tracksObj.getString("href"), authHeader);
+                return tracks.getJSONArray("items");
             }
         }
+        return null;
     }
 }

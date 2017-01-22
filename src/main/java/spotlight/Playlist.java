@@ -32,12 +32,21 @@ public class Playlist implements Serializable{
         this.songlist = songlist;
     }
 
+    public Playlist(Song currentSong, List<Song> songlist){
+        this.currentSong = currentSong;
+        this.songlist = songlist;
+    }
+
     public long getId(){
         return id;
     }
 
     public Song getCurrentSong(){
         return currentSong;
+    }
+
+    public void setCurrentSong(Song song){
+        this.currentSong = song;
     }
 
     public List<Song> getPlaylist(){
