@@ -19,7 +19,7 @@ public class NextSongController {
     private final PlaylistRepository playlistRepository;
 
     @Autowired
-    PlaylistController(PlaylistRepository playlistRepository){
+    NextSongController(PlaylistRepository playlistRepository){
         this.playlistRepository = playlistRepository;
     }
     
