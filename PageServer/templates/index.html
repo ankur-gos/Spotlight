@@ -35,14 +35,15 @@
 
 				<div class="songList">
 					<ul class = "list-group">
-						<li class="list-group-item" ng-repeat = "item in list1 | orderBy:'-Vote'">
+						<li class="list-group-item listRow" ng-repeat = "item in list1 | orderBy:'-Vote'">
+							
 							<div class="row">								
-								<img class = " col-sm-1 col- listImage" ng-src="{aitem.Arta}"/>								
+								<img class = " col-sm-1 col- listImage" ng-src="{a item.Art a}"/>								
 								<div class = "col-sm-10 col-xs-10">
-									{aitem.Namea}
-									{aitem.Artista}
-									{aitem.Albuma}
-									{aitem.Votea}
+									{a item.Name a}
+									{a item.Artist a}
+									{a item.Album a}
+									{a item.Vote a}
 								</div>
 								<div class = "col-sm-1">
 									<button ng-click= "item.Vote = item.Vote + 1" type="button" class="btn btn-default" aria-label="Right Align">
