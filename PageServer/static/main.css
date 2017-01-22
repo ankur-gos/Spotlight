@@ -10,11 +10,31 @@ Google Fonts
 */
 .currentSong{
 	margin: 5px;
-	background-color: #9f9f9f;
+	background-color: grey;
+	padding: 10px;
+	border-radius: 10px;
 }
 
-.songList{
+.songList li{
+	border-radius: 10px;
 
+}
+.icon {
+	font-size: 50px;
+}
+
+.voteNumber{
+	font-size: 16px;
+	font-style: bold;
+}
+
+.vote{
+	margin:auto;
+	align-content: center;
+}
+.listRow{
+	margin:auto;
+	width: 70%;
 }
 
 .fill {
@@ -28,4 +48,20 @@ Google Fonts
     flex-shrink: 0;
     min-width: 100%;
     min-height: 100%
+}
+
+.list-group .list-group-item:hover {
+	background-color: grey;
+
+}
+.SongName{
+	font-family: 'Lato', sans-serif;
+	font-style: bold;
+	font-size: large;
+}
+.SongArtist{
+	font-family: 'Comfortaa', cursive;
+}
+.SongAlbum{
+	font-family: 'Comfortaa', cursive;
 }
