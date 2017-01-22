@@ -22,14 +22,14 @@ public class Playlist implements Serializable{
     private Song currentSong;
 
     @OneToMany
-    private List<Song> playlist = new ArrayList<>();
+    private List<Song> songlist = new ArrayList<>();
 
     Playlist(){}
     
-    public Playlist(Long id, Song currentSong, List<Song> playlist){
+    public Playlist(Long id, Song currentSong, List<Song> songlist){
         this.id = id;
         this.currentSong = currentSong;
-        this.playlist = playlist;
+        this.songlist = songlist;
     }
 
     public long getId(){
@@ -41,10 +41,10 @@ public class Playlist implements Serializable{
     }
 
     public List<Song> getPlaylist(){
-        return playlist;
+        return songlist;
     }
 
     public void setPlaylist(List<Song> playlist){
-        this.playlist = playlist;
+        this.songlist = playlist;
     }
 }

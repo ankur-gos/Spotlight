@@ -25,10 +25,6 @@ public class PlaylistController {
     
     @RequestMapping(method = RequestMethod.GET)
     public Playlist playlist() {
-        Song song = new Song(new Long(1), "Wolf", "Sylvan Esso", 5);
-        List<Song> songList = new ArrayList<>();
-        songList.add(song);
-        playlistRepository.save(new Playlist(new Long(1), song, songList));
         // Ask database for playlist object
         Playlist playlist = this.playlistRepository.findOne(new Long(1));
         if(playlist != null){

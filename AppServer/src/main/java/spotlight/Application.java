@@ -17,15 +17,15 @@ public class Application {
     }
 
     @Bean
-	CommandLineRunner init(PlaylistRepository playlistRepository) {
+	CommandLineRunner init(PlaylistRepository playlistRepository, SongRepository songRepository) {
 		return (evt) -> Arrays.asList(
 				"myplaylist")
 				.forEach(
 						a -> {
-                            // Song song = new Song(new Long(1), "Wolf", "Sylvan Esso", 5);
-                            // List<Song> songList = new ArrayList<>();
-                            // songList.add(song);
-                            // playlistRepository.save(new Playlist(new Long(1), song, songList));
+                            Song song = songRepository.save(new Song(new Long(1), "Wolf", "Sylvan Esso", 5));
+                            List<Song> songList = new ArrayList<>();
+                            songList.add(song);
+                            playlistRepository.save(new Playlist(new Long(1), song, songList));
 						});
 	}
 }

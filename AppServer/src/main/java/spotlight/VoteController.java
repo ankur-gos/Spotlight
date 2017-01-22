@@ -25,7 +25,7 @@ import java.util.ListIterator;
      }
 
      @RequestMapping(method = RequestMethod.POST)
-     public Playlist vote(@PathVariable String songId){
+     public Playlist vote(@RequestParam("songId") String songId){
          Playlist playlist = this.playlistRepository.findOne(new Long(1));
          List<Song> songList = playlist.getPlaylist();
          for (ListIterator<Song> iter = songList.listIterator(); iter.hasNext(); ) {
