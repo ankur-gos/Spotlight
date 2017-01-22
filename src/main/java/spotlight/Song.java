@@ -50,7 +50,7 @@ public class Song implements Serializable{
 	 public Long getId()
 	 {
 		 if(id == null){
-			 id = 20;
+			 id = new Long(20);
 		 }
 		 return id;
 	 }
