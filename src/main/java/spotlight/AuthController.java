@@ -43,7 +43,11 @@ import org.json.*;
              JSONObject artistObj = artists.getJSONObject(0);
              String artist = artistObj.getString("name");
              String uri = track.getString("uri");
-             Song addSong = songRepository.save(new Song(new Long(i), name, artist, 0, uri));
+             JSONObject album = track.getJSONObject("album");
+             JSONArray images = album.getJSONArray("images");
+             JSONObject image = images.getJSONObject(1);
+             String imageURL = image.getString("url");
+             Song addSong = songRepository.save(new Song(new Long(i), name, artist, 0, uri, imageURL));
              songs.add(addSong);
          }
          playlist.setId(new Long(1));

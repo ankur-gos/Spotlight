@@ -33,7 +33,7 @@ public class NextSongController {
         Playlist playlist = this.playlistRepository.findOne(new Long(1));
         if(playlist != null){
             Integer max = 0;
-            Song currentSong = new Song(new Long(1), "Wolf", "Sylvan Esso", 0, "spotify:track:4j4OfqOvPCnOoePywhtrc6");
+            Song currentSong = new Song(new Long(1), "Wolf", "Sylvan Esso", 0, "spotify:track:4j4OfqOvPCnOoePywhtrc6", "");
             int index = 0;
             for (ListIterator<Song> iter = playlist.getPlaylist().listIterator(); iter.hasNext(); ) {
                 Song nextSong = iter.next();
@@ -47,8 +47,8 @@ public class NextSongController {
             }
             List<Song> songlist = playlist.getPlaylist();
             songlist.remove(index);
-            Song songCopy = new Song(currentSong.getId(), currentSong.getName(), currentSong.getArtist(), currentSong.getVoteCnt(), currentSong.getURI());
-            Song newSong = songRepository.save(new Song(currentSong.getId(), currentSong.getName(), currentSong.getArtist(), 0, currentSong.getURI()));
+            Song songCopy = new Song(currentSong.getId(), currentSong.getName(), currentSong.getArtist(), currentSong.getVoteCnt(), currentSong.getURI(), currentSong.getImageURL());
+            Song newSong = songRepository.save(new Song(currentSong.getId(), currentSong.getName(), currentSong.getArtist(), 0, currentSong.getURI(), currentSong.getImageURL()));
             songlist.add(newSong);
             playlist.setCurrentSong(newSong);
             playlist.setPlaylist(songlist);
@@ -59,6 +59,6 @@ public class NextSongController {
 
         // If playlist does not exist, fetch from spotify
         // CODE GOES HERE
-        return new Song(new Long(1), "Wolf", "Sylvan Esso", 3, "spotify:track:4j4OfqOvPCnOoePywhtrc6");
+        return new Song(new Long(1), "Wolf", "Sylvan Esso", 3, "spotify:track:4j4OfqOvPCnOoePywhtrc6", "");
     }
 }
