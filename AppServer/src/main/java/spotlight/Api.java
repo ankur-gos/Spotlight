@@ -15,9 +15,9 @@ public class Api {
 	//private
 	private HttpManager httpmngr = NULL;
 	private Scheme schema;
-	print String host;
+	private String host;
 	private int port;
-	priivate final String clientSecret;
+	private final String clientSecret;
 	private final String clientIDl
 	private final Strin URI;
 	
