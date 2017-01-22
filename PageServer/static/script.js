@@ -54,3 +54,7 @@ $scope.curSong = {
 
 	$scope.list1 = fakeJson.songs;
 }]);
+
+mainApp.config(function($interpolateProvider) {
+        $interpolateProvider.startSymbol('{a').endSymbol('a}');
+    });

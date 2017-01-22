@@ -10,19 +10,16 @@ Google Fonts
 */
 .currentSong{
 	margin: 5px;
-	background-color: grey;
-	padding: 10px;
-	border-radius: 10px;
-
+	background-color: #9f9f9f;
 }
 
 .songList{
-	background-color: gray;
+
 }
 
-.item{
-	font-family: 'Lato', sans-serif;
-	font-size: large;
+.listRow{
+	margin: auto;
+	width: 80%;
 }
 
 .fill {
