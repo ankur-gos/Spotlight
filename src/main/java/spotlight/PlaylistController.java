@@ -27,7 +27,7 @@ public class PlaylistController {
     @RequestMapping(method = RequestMethod.GET)
     public Playlist playlist() {
         // Ask database for playlist object
-        Playlist playlist = this.playlistRepository.findOne(new Long(1));
+        Playlist playlist = this.playlistRepository.findOne(new Long(0));
         if(playlist != null){
             return playlist;
         }
