@@ -36,6 +36,7 @@ import org.json.*;
          List<Song> songs = new ArrayList<>();
          for(int i = 0; i < tracks.length(); i++){
              JSONObject track = tracks.getJSONObject(i);
+             System.out.println(track.toString());
              String name = track.getString("name");
              JSONArray artists = track.getJSONArray("artists");
              JSONObject artistObj = artists.getJSONObject(0);
