@@ -19,15 +19,6 @@ Google Fonts
 	border-radius: 10px;
 
 }
-.icon {
-	font-size: 50px;
-}
-
-.voteNumber{
-	font-size: 16px;
-	font-style: bold;
-}
-
 .vote{
 	margin:auto;
 	align-content: center;
@@ -62,11 +53,48 @@ Google Fonts
 .SongName{
 	font-family: 'Lato', sans-serif;
 	font-style: bold;
-	font-size: large;
+	font-size: larger;
 }
 .SongArtist{
 	font-family: 'Comfortaa', cursive;
+	font-size: large;
 }
 .SongAlbum{
 	font-family: 'Comfortaa', cursive;
+	font-size: large;
+}
+.CurName{
+	font-family: 'Lato', sans-serif;
+	font-style: bold;
+	font-size: xx-large;
+}
+.CurArtist{
+	font-family: 'Comfortaa', cursive;
+	font-size:large;
+}
+.CurAlbum{
+	font-family: 'Comfortaa', cursive;
+	font-size: large;
+}
+.icon{
+	margin: 0 auto;
+    width: 80%;
+    font-size: 50px;
+    text-align: center;
+    align-content: center;
+    /*background-color: blue;*/
+}
+.icon:active{
+	color:white;
+}
+.color2{
+	/*background-color: green;*/
+}
+.voteNumber{
+	font-size: 16px;
+	font-style: bold;
+    text-align: center;
+    width: 75%;	
+    /*background-color: red;*/
+
 }

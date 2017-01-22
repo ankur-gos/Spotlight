@@ -10,14 +10,14 @@
 		<link href="https://fonts.googleapis.com/css?family=Comfortaa|Josefin+Sans|Josefin+Slab|Lato:300|Play|Varela+Round|Yellowtail" rel="stylesheet">
 
 		
-		<!--
+		
 		<script src="../static/script.js"></script>
 		<link rel = "stylesheet" href = "../static/main.css" >
-		-->
 		
+		<!--
 		<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='main.css') }} ">
 		<script type="text/javascript"  src="{{ url_for('static', filename='script.js') }}"></script>
-		
+		-->
 	</head>
 
 	<body ng-app = "mainApp">
@@ -26,9 +26,9 @@
 				<div class="row currentSong">
 					<img class="col-sm-3 col-xs-8 col-xs-offset-2 col-sm-offset-0" ng-src = "{a curSong.Art a}" />
 					<div class = "col-sm-3 col-xs-12">
-						<div class = "SongName">{a curSong.Name a}</div>
-						<div class = "SongArtist">{a curSong.Artist a}</div>
-						<div class = "SongAlbum">{a curSong.Album a}</div>
+						<div class = "CurName">{a curSong.Name a}</div>
+						<div class = "CurArtist">{a curSong.Artist a}</div>
+						<div class = "CurAlbum">{a curSong.Album a}</div>
 					</div> 
 					<div class = "col-sm-2 col-xs-6">
 						<p>Player time</p>
@@ -41,7 +41,7 @@
 							<div class="row">				
 
 								<img class = " col-sm-2 col-xs-2 listImage" ng-src="{aitem.Arta}"/>								
-								<div class = "col-sm-8 col-xs-5">
+								<div class = "col-sm-8 col-xs-5 ">
 									<div class= "SongName">
 										{a item.Name a}
 									</div>
@@ -53,10 +53,11 @@
 									</div>
 									
 								</div>
-								<div class = "col-sm-1 col-xs-4 ">
+								<div class = "col-sm-2 col-xs-4 color2">
+
 									<i style = "cursor:pointer" ng-click= "item.Vote = item.Vote + 1" class="glyphicon glyphicon-chevron-up icon">
 									</i>
-									<div class = "col-sm-1 voteNumber">
+									<div class = "voteNumber">
 										{a item.Vote a}
 									</div>
 									<i style = " cursor:pointer" ng-click= "item.Vote = item.Vote - 1" class="glyphicon glyphicon-chevron-down icon"> 
