@@ -28,7 +28,7 @@ public class PlaylistController {
     public Playlist playlist() {
         // Ask database for playlist object
         Playlist playlist = this.playlistRepository.findOne(new Long(1));
-        if(playlist != null)
+        if(playlist != null){
             return playlist;
         }
 
