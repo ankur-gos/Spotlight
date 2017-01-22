@@ -70,7 +70,7 @@ class SpotifyManager {
             String name = list.getString("name");
             if (name.equals(playlist)){
                 System.out.println(list.toString());
-                JSONObject tracksObj = new JSONObject(list.toString("tracks"));
+                JSONObject tracksObj = list.getJSONObject("tracks");
                 JSONObject tracks = getJsonFromURL(tracksObj.getString("href"), authHeader);
                 return tracks.getJSONArray("items");
             }
