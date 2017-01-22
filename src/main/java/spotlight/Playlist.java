@@ -36,7 +36,10 @@ public class Playlist implements Serializable{
         this.songlist = songlist;
     }
 
-    public long getId(){
+    public Long getId(){
+        if(id == null){
+            id = new Long(0);
+        }
         return id;
     }
     public void setId(Long id){
