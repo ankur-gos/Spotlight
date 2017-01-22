@@ -25,7 +25,7 @@ class SpotifyManager implements Serializable{
                        }
            catch(Exception e){
               System.err.println("Cannot load user specified playlist");
-              
+              e.printStackTrace();
            }      
           
     }
