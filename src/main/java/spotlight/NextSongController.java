@@ -50,12 +50,8 @@ public class NextSongController {
             Song songCopy = new Song(currentSong.getId(), currentSong.getName(), currentSong.getArtist(), currentSong.getVoteCnt(), currentSong.getURI());
             Song newSong = songRepository.save(new Song(currentSong.getId(), currentSong.getName(), currentSong.getArtist(), 0, currentSong.getURI()));
             songlist.add(newSong);
-            
+            playlist.setCurrentSong(newSong);
             playlist.setPlaylist(songlist);
-            for (ListIterator<Song> iter = playlist.getPlaylist().listIterator(); iter.hasNext(); ) {
-                Song nextSong = iter.next();
-                // System.out.println(nextSong.getVoteCnt());
-            }
             playlistRepository.save(playlist);
             System.out.println(songCopy.getVoteCnt());
             return songCopy;
