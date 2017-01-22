@@ -46,7 +46,7 @@ import org.json.*;
              Song addSong = songRepository.save(new Song(name, artist, 0, uri));
              songs.add(addSong);
          }
-         playlist.setId(new Long(1));
+        //  playlist.setId(new Long(1));
          playlist.setPlaylist(songs);
          playlist.setCurrentSong(songs.get(0));
          playlistRepository.save(playlist);
