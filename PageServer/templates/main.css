@@ -10,12 +10,14 @@ Google Fonts
 */
 .currentSong{
 	margin: 5px;
-	background-color: #9f9f9f;
+	background-color: grey;
+	padding: 10px;
+	border-radius: 10px;
 
 }
 
 .songList{
-
+	background-color: gray;
 }
 
 .item{
