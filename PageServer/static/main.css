@@ -37,6 +37,11 @@ Google Fonts
 	width: 70%;
 }
 
+.listRow{
+	margin: auto;
+	width: 80%;
+}
+
 .fill {
     display: flex;
     justify-content: center;

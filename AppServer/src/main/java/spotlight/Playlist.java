@@ -18,17 +18,18 @@ public class Playlist implements Serializable{
     @GeneratedValue
     private Long id;
 
-    @JoinColumn(nullable = false)
+    @OneToOne
     private Song currentSong;
 
-    @OneToMany(orphanRemoval = true, cascade = {CascadeType.ALL}, fetch = FetchType.LAZY)
-    @JoinColumn(nullable = false)
-    private List<Song> playlist = new ArrayList<>();
+    @OneToMany
+    private List<Song> songlist = new ArrayList<>();
+
+    Playlist(){}
     
-    public Playlist(long id, Song currentSong, List<Song> playlist){
+    public Playlist(Long id, Song currentSong, List<Song> songlist){
         this.id = id;
         this.currentSong = currentSong;
-        this.playlist = playlist;
+        this.songlist = songlist;
     }
 
     public long getId(){
@@ -40,6 +41,10 @@ public class Playlist implements Serializable{
     }
 
     public List<Song> getPlaylist(){
-        return playlist;
+        return songlist;
+    }
+
+    public void setPlaylist(List<Song> playlist){
+        this.songlist = playlist;
     }
 }
