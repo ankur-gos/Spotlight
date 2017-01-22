@@ -10,8 +10,8 @@ Google Fonts
 */
 .currentSong{
 	margin: 5px;
-	background-color: grey;
 	padding: 10px;
+	border: solid;
 	border-radius: 10px;
 }
 
@@ -87,9 +87,6 @@ Google Fonts
 .icon:active{
 	color:white;
 }
-.color2{
-	/*background-color: green;*/
-}
 .voteNumber{
 	font-size: 16px;
 	font-style: bold;
@@ -97,4 +94,29 @@ Google Fonts
     width: 75%;	
     /*background-color: red;*/
 
+}
+.color{
+	background-color: blue;
+}
+.color1{
+	background-color: green;
+}
+.more{
+	font-size:20px;
+	margin-left: 90%;
+	margin-top: 60%;
+    /*background-color: black;*/
+}
+.morecont{
+	/*background-color: black;*/
+}
+@media screen and (min-width:500px){
+	.more{
+		font-size:20px;
+		margin-left: 90%;
+		margin-top: 60%;
+	}
+}
+.more:active{
+	color:white;
 }
