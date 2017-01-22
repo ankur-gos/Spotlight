@@ -70,7 +70,10 @@ public class Song implements Serializable{
 	 }
 
 	 public void iterateVote(){
-		 this.voteCount = this.voteCount + 1;
+		 if(this.voteCount != null)
+		 	this.voteCount = this.voteCount + 1;
+         else
+		 	this.voteCount = 1;
 	 }
 
 }

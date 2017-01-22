@@ -29,22 +29,6 @@ class SpotifyManager {
         try (OutputStream output = connection.getOutputStream()) {
             output.write(query.getBytes(charset));
         }
-        // String urlParameters  = "grant_type=authorization_code&code=" + token + "&redirect_ui=c";
-        // byte[] postData       = urlParameters.getBytes( StandardCharsets.UTF_8 );
-        // int    postDataLength = postData.length;
-        // String request        = "http://example.com/index.php";
-        // URL    url            = new URL( request );
-        // HttpURLConnection conn= (HttpURLConnection) url.openConnection();           
-        // conn.setDoOutput( true );
-        // conn.setInstanceFollowRedirects( false );
-        // conn.setRequestMethod( "POST" );
-        // conn.setRequestProperty( "Content-Type", "application/x-www-form-urlencoded"); 
-        // conn.setRequestProperty( "charset", "utf-8");
-        // conn.setRequestProperty( "Content-Length", Integer.toString( postDataLength ));
-        // conn.setUseCaches( false );
-        // try( DataOutputStream wr = new DataOutputStream( conn.getOutputStream())) {
-        // wr.write( postData );
-        // }
         BufferedReader in = new BufferedReader(new InputStreamReader(
                                                connection.getInputStream()));
         String inputLine;
@@ -85,7 +69,8 @@ class SpotifyManager {
             JSONObject list = playlists.getJSONObject(i);
             String name = list.getString("name");
             if (name.equals(playlist)){
-                JSONObject tracksObj = new JSONObject(list.getString("tracks"));
+                System.out.println(list.toString());
+                JSONObject tracksObj = new JSONObject(list.toString("tracks"));
                 JSONObject tracks = getJsonFromURL(tracksObj.getString("href"), authHeader);
                 return tracks.getJSONArray("items");
             }
