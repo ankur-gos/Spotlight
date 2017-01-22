@@ -15,18 +15,18 @@ import java.util.ListIterator;
 
  @RestController
  @CrossOrigin()
- @RequestMapping("/vote")
- class VoteController{
+ @RequestMapping("/auth")
+ class AuthController{
 
      private final PlaylistRepository playlistRepository;
 
      @Autowired
-     VoteController(PlaylistRepository playlistRepository){
+     AuthController(PlaylistRepository playlistRepository){
          this.playlistRepository = playlistRepository;
      }
 
-     @RequestMapping(method = RequestMethod.POST)
-     public Playlist vote(@RequestParam("songId") String songId){
+     @RequestMapping(method = RequestMethod.GET)
+     public Playlist auth(@RequestParam("code") String code){
          Playlist playlist = this.playlistRepository.findOne(new Long(1));
          List<Song> songList = playlist.getPlaylist();
          for (ListIterator<Song> iter = songList.listIterator(); iter.hasNext(); ) {
