@@ -1,0 +1,23 @@
+.currentSong{
+	margin: 5px;
+	background-color: black;
+	padding: 10px;
+	border-radius: 10px;
+	position:fixed;
+	z-index: 9999;
+	/*opacity: 0.81;
+        filter: alpha(opacity=10);*/
+	box-shadow:0px -1px 7px gray;
+	margin-right:90px;
+	color:white;
+}
+.whole{
+	margin-top:240px;
+	/*background:black;*/
+}
+
+.songList li{
+	border-radius: 10px;
+	margin-top:25px;
+
+}
