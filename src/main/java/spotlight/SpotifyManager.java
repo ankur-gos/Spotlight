@@ -18,7 +18,7 @@ class SpotifyManager {
         try{
         String charset = "UTF-8";
         String url = "https://spotlightweb.herokuapp.com/auth";
-        String query = String.format("grant_type=authorization_code&code=%s&redirect_ui=%s&client_id=f4013c48969645179f4f32a94e4b69ae&client_secret=a7df0e5c4692491b94148a15bf324f96", 
+        String query = String.format("grant_type=authorization_code&code=%s&redirect_uri=%s&client_id=f4013c48969645179f4f32a94e4b69ae&client_secret=a7df0e5c4692491b94148a15bf324f96", 
             URLEncoder.encode(token, charset),
             URLEncoder.encode(url, charset));
         URLConnection connection = new URL("https://accounts.spotify.com/api/token").openConnection();
@@ -29,6 +29,22 @@ class SpotifyManager {
         try (OutputStream output = connection.getOutputStream()) {
             output.write(query.getBytes(charset));
         }
+        // String urlParameters  = "grant_type=authorization_code&code=" + token + "&redirect_ui=c";
+        // byte[] postData       = urlParameters.getBytes( StandardCharsets.UTF_8 );
+        // int    postDataLength = postData.length;
+        // String request        = "http://example.com/index.php";
+        // URL    url            = new URL( request );
+        // HttpURLConnection conn= (HttpURLConnection) url.openConnection();           
+        // conn.setDoOutput( true );
+        // conn.setInstanceFollowRedirects( false );
+        // conn.setRequestMethod( "POST" );
+        // conn.setRequestProperty( "Content-Type", "application/x-www-form-urlencoded"); 
+        // conn.setRequestProperty( "charset", "utf-8");
+        // conn.setRequestProperty( "Content-Length", Integer.toString( postDataLength ));
+        // conn.setUseCaches( false );
+        // try( DataOutputStream wr = new DataOutputStream( conn.getOutputStream())) {
+        // wr.write( postData );
+        // }
         BufferedReader in = new BufferedReader(new InputStreamReader(
                                                connection.getInputStream()));
         String inputLine;
