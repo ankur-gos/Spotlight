@@ -22,24 +22,32 @@ public class Song implements Serializable{
 
 	private Integer voteCount;
 
+	private String uri;
+
 	@ManyToOne
 	private Playlist playlist;
 	
 	Song(){}
 
 	//set
-	Song(Long id, String name, String artist, Integer voteCount)
+	Song(Long id, String name, String artist, Integer voteCount, String uri)
 	{
 		this.id = id;
 		this.name = name;
 		this.artist = artist;
 		this.voteCount = voteCount;
-		
+		this.uri = uri;
 	}
 	//getters
 	 public Long getId()
 	 {
 		 return id;
+	 }
+	 public String getURI(){
+		 return uri;
+	 }
+	 public void setURI(String uri){
+		 this.uri = uri;
 	 }
 	 public String getName()
 	 {
