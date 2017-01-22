@@ -44,6 +44,8 @@ class SpotifyManager {
         URL spotify = new URL(url);
         URLConnection sc = spotify.openConnection();
         sc.setRequestProperty("Authorization", authHeader);
+        System.out.println("Auth header: ");
+        System.out.println(authHeader);
         BufferedReader in = new BufferedReader(
                                 new InputStreamReader(
                                 sc.getInputStream()));
