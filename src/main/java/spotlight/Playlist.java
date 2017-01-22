@@ -15,8 +15,6 @@ import java.util.List;
 public class Playlist implements Serializable{
 
     @Id
-    @SequenceGenerator(name="SEQ_GEN", sequenceName="SEQ_JUST_FOR_TEST", allocationSize=1)
-    @GeneratedValue(strategy=GenerationType.SEQUENCE, generator="SEQ_GEN")
     private Long id;
 
     @OneToOne

@@ -13,8 +13,6 @@ import javax.persistence.*;
 public class Song implements Serializable{
 	//fields
 	@Id
-	@SequenceGenerator(name="SEQ_GEN1", sequenceName="SEQ_JUST_FOR_TEST1", allocationSize=1)
-	@GeneratedValue(strategy=GenerationType.SEQUENCE, generator="SEQ_GEN1")
 	private Long id;
 
 	private String name;
